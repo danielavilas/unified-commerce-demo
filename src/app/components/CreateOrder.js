@@ -43,7 +43,6 @@ export default function CreateOrder({ connectionId }) {
         setIsLoading(true);
         const response = await axios.post(`/api/orders?connectionId=${connectionId}`, order);
 
-        console.log('response', response)
         if (response.data.order) {
           setOrder(response.data.order);
         }
@@ -65,7 +64,8 @@ export default function CreateOrder({ connectionId }) {
         lineItems: [
           {
             variantId: variantId,
-            quantity: quantity
+            quantity: quantity,
+            price: 10,
           }
         ],
         currency: currency,
@@ -77,6 +77,8 @@ export default function CreateOrder({ connectionId }) {
         },
         customer: {
           email: customer.email,
+          firstName: 'QA',
+          lastName: 'TEST'
         }
       };
     };
