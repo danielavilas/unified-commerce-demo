@@ -7,6 +7,7 @@ export default function ConnectApp({ onConnectionEstablished }) {
   const [alloy, setAlloy] = useState(null);
 
   useEffect(() => {
+    console.log('will call alloy')
     setAlloy(Alloy());
   }, []);
 
@@ -18,10 +19,12 @@ export default function ConnectApp({ onConnectionEstablished }) {
 
     try {
       const response = await axios.get('/api/token');
+      console.log('alloy', alloy)
       alloy.setToken(response.data.token);
       alloy.authenticate({
-        category: 'crm',
+        category: 'commerce',
         callback: (data) => {
+          console.log('callback.data??', data)
           if (data.success) {
             localStorage.setItem('connectionId', data.connectionId);
             onConnectionEstablished(data.connectionId);

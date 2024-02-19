@@ -1,0 +1,38 @@
+.refreshButton {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.refreshButton:hover {
+  background-color: #e4e4e4;
+}
+
+.refreshButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  text-align: left;
+  background-color: #f2f2f2;
+}
+
+.row:hover {
+  background-color: #f2f2f2;
+}

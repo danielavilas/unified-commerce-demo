@@ -1,4 +1,3 @@
-// pages/api/token.js
 export default async function handler(req, res) {
   const YOUR_API_KEY = process.env.ALLOY_API_KEY;
   const userId = process.env.ALLOY_USER_ID;
@@ -10,7 +9,9 @@ export default async function handler(req, res) {
         'Accept': 'application/json'
       }
     });
+
     const data = await response.json();
+
     res.status(200).json({ token: data.token });
   } catch (error) {
     console.error('Error generating JWT token:', error);
